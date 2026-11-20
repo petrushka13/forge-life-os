@@ -1,0 +1,12 @@
+// Copy to Local.xcconfig (ignored by Git). Enter your actual registered values.
+DEVELOPMENT_TEAM =
+FORGE_APP_BUNDLE_ID = com.yourname.FORGE
+// Optional capabilities: enable only after registering them for your app and extensions.
+// FORGE_IOS_ENTITLEMENTS = Config/iOSOptional.entitlements
+// FORGE_MAC_ENTITLEMENTS = Config/MacOptional.entitlements
+// FORGE_EXTENSION_ENTITLEMENTS = Config/MonitorOptional.entitlements
+// FORGE_REPORT_ENTITLEMENTS = Config/ReportOptional.entitlements
+// FORGE_IOS_FLAGS = FORGE_HEALTH_ENABLED FORGE_CLOUD_ENABLED FORGE_SCREEN_TIME_ENABLED
+// FORGE_MAC_FLAGS = FORGE_CLOUD_ENABLED
+// FORGE_CLOUD_CONTAINER = iCloud.com.yourname.FORGE
+// FORGE_APP_GROUP = group.com.yourname.FORGE

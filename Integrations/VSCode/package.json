@@ -1,0 +1,15 @@
+{
+  "name": "forge-private-activity", "displayName": "FORGE Private Activity", "version": "1.0.0",
+  "publisher": "forge-personal", "description": "Opt-in coding duration references without source contents or keystrokes.",
+  "engines": {"vscode": "^1.95.0"}, "main": "./extension.js", "extensionKind": ["ui"],
+  "activationEvents": ["onStartupFinished"],
+  "capabilities": {"untrustedWorkspaces": {"supported": false}},
+  "contributes": {"commands": [
+    {"command": "forge.configure", "title": "FORGE: Configure private evidence backend"},
+    {"command": "forge.start", "title": "FORGE: Start activity recording"},
+    {"command": "forge.stop", "title": "FORGE: Stop activity recording"},
+    {"command": "forge.flush", "title": "FORGE: Send pending activity"},
+    {"command": "forge.erase", "title": "FORGE: Delete activity and credentials"}
+  ]},
+  "scripts": {"test": "node --test activity.test.js"}
+}

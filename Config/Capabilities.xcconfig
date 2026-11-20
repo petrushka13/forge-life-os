@@ -1,0 +1,13 @@
+// Generated project always references this file; regeneration preserves Local.xcconfig.
+// Keep the older local prefix as a fallback for existing account settings.
+FORGE_BUNDLE_PREFIX = com.personal.FORGE
+FORGE_APP_BUNDLE_ID = $(FORGE_BUNDLE_PREFIX)
+FORGE_IOS_ENTITLEMENTS = Config/iOS.entitlements
+FORGE_MAC_ENTITLEMENTS = App/ForgeMac.entitlements
+FORGE_EXTENSION_ENTITLEMENTS = Config/Extension.entitlements
+FORGE_REPORT_ENTITLEMENTS = Config/Extension.entitlements
+FORGE_IOS_FLAGS =
+FORGE_MAC_FLAGS =
+FORGE_CLOUD_CONTAINER =
+FORGE_APP_GROUP =
+#include? "Local.xcconfig"

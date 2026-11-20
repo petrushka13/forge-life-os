@@ -1,0 +1,38 @@
+{
+  "result": "Passed",
+  "passedTests": 4,
+  "failedTests": 0,
+  "skippedTests": 0,
+  "runtimeWarnings": [
+    {
+      "issueType": "Runtime Warning",
+      "message": "Invalid frame dimension (negative or non-finite)."
+    },
+    {
+      "issueType": "Runtime Warning",
+      "message": "Invalid frame dimension (negative or non-finite)."
+    }
+  ],
+  "testFailures": [],
+  "environmentDescription": "FORGE \u00b7 Built with macOS 26.6.2",
+  "devicesAndConfigurations": [
+    {
+      "device": {
+        "architecture": "arm64",
+        "deviceName": "iPhone 17 Pro",
+        "modelName": "iPhone 17 Pro",
+        "osBuildNumber": "23F77",
+        "osVersion": "26.5",
+        "platform": "iOS Simulator"
+      },
+      "expectedFailures": 0,
+      "failedTests": 0,
+      "passedTests": 4,
+      "skippedTests": 0,
+      "testPlanConfiguration": {
+        "configurationId": "1",
+        "configurationName": "Test Scheme Action"
+      }
+    }
+  ]
+}

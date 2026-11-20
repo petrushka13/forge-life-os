@@ -1,0 +1,47 @@
+name: Verify FORGE
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Tests and native builds
+    # The xcode-27 arm64 image includes Xcode 27.2 (27B52).
+    runs-on: xcode-27
+    timeout-minutes: 30
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_27.2.app/Contents/Developer
+      PYTHONDONTWRITEBYTECODE: '1'
+      FORGE_VERIFY_DIR: ${{ runner.temp }}/forge-verify
+    steps:
+      - name: Check out source
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@83679a892e2d95755f2dac6acb0bfd1e9ac5d548 # v6.1.0
+        with:
+          python-version: '3.13'
+      - name: Set up Node.js
+        uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6.1.0
+        with:
+          node-version: '24'
+      - name: Show toolchain
+        run: |
+          test -d "$DEVELOPER_DIR"
+          xcodebuild -version
+          swift --version
+          python3 --version
+          node --version
+      - name: Run release verification
+        run: bash scripts/verify_release.sh

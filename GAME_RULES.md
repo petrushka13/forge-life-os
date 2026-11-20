@@ -1,0 +1,19 @@
+# Deterministic game rules
+
+XP is permanent. Coins are earned, never purchased. Domain MMR reflects execution and can decrease; Life MMR is a normalized weighted composite, never a separate editable balance. Defaults: Business .45, Builder .30, Health .20, Network .05, starting rating 1000. Rank thresholds and economic constants are visible in Settings and centralized in GameConfig.
+
+Levels require `round(200 × level^1.35)` XP per level. Ranks progress from Iron through Bronze, Silver, Gold, Platinum, Diamond, Master, Grandmaster and Apex, with divisions inside each tier. All imported/configured numeric inputs must be finite and bounded; ratings are bounded to 100,000,000.
+
+Quest rewards depend on base value, bounded difficulty/impact and evidence confidence. Manual proof counts at .6; coding/timer references .8; Git/Calendar/webhook .9; relevant Health/outcome references 1. A reference's confidence does not establish every acceptance criterion: the user confirms relevance and result. Imports, activity counts, duration, commits and skill-state toggles grant no rewards by themselves.
+
+For domain/day, weighted meaningful completion determines performance in 0...1.25. Delta is `round(50 × (performance − .65))`, normally clamped −35...+30. Positive earned progress is recorded immediately; settlement applies only the remaining delta. Optional work, no planned work and planned Health rest cause no daily loss. Recovery halves a negative daily delta and never yields a major positive daily result.
+
+Revenue milestones and bosses share **one maxOutcomeBonus budget per domain/day** (default 20). A 100,000 KZT received-revenue milestone contributes 5; a boss outcome contributes up to 10 from the same remaining budget. Daily performance and the combined outcome budget are separate explicit caps. Past ledger entries are never recalculated when rules change. A payment UUID is idempotent; received currency is explicit and only KZT contributes to the KZT target. Recurring describes a received payment, not invented future income. Pipeline stages do not mint revenue; customer value is recorded KZT received, without mixing currencies.
+
+Low-impact work has daily XP/Coins caps of 100/40. Normal earned Coins cap at 240/day, with boss rewards distinguished. Repeated identical titles stop earning after two completions/day; renamed maintenance/tiny tasks still share the low-impact cap. Business learning receives only .15 completion credit and cannot earn outcome MMR alone. Completed quests and consumed external IDs/proof references cannot be replayed. Manual honesty remains self-attested.
+
+Three normal mandatory quests and at most one main quest are enforced. Recovery is once/day, normally 25 minutes. Weekly/monthly bosses are once per period; AI cannot mint replacements repeatedly. Untouched weekly replacement requires explicit confirmation. Independent skill proof and prerequisites are mandatory; mastery follows verification and switching states awards no XP.
+
+Settlement uses calendar days and a timezone pinned at onboarding (legacy sessions capture the current timezone on their first upgraded day refresh). DST uses calendar arithmetic, not a fixed 24-hour day. Travel does not settle the same day twice. Streaks track Execution, Main Quest, Training and No Zero Day; optional misses do not break them and planned rest bridges Training. Ghost compares actual seven-day output to historical best, with no invented benchmark.
+
+Reward redemption checks balance and active windows. Authorized iPhone Earned Access schedules/unshields before durable debit; API or save failure preserves/refunds the debit and revokes the grant. Default/Mac access is a visible honor-system timer. Device expiry/re-shield behavior requires signed-device verification. Emergency override releases restrictions with delay, reason and bounded consequences; no default punishment is applied.
